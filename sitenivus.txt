@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivus Tecnologia - Business Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #113d63 0%, #121212 100%);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background-color: #004d4d;
+        }
+        .dashboard-img {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .dashboard-img:hover {
+            transform: translateY(-5px);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="fixed w-full bg-[#121212]/90 backdrop-blur-md z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-white">
+                    <span class="text-[#004d4d]">Nivus</span> Tecnologia
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-300 hover:text-white transition duration-300">Início</a>
+                <a href="#sobre" class="text-gray-300 hover:text-white transition duration-300">Sobre</a>
+                <a href="#solucoes" class="text-gray-300 hover:text-white transition duration-300">Soluções</a>
+                <a href="#planos" class="text-gray-300 hover:text-white transition duration-300">Planos</a>
+                <a href="#contato" class="text-gray-300 hover:text-white transition duration-300">Contato</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="https://wa.me/5584981388144?text=Olá, gostaria de conhecer mais sobre a solução de BI." target="_blank" class="bg-[#004d4d] hover:bg-[#006666] text-white px-6 py-2 rounded-md font-medium transition duration-300">
+                    Solicitar Proposta
+                </a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#1a1a1a] w-full py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-300 hover:text-white transition duration-300">Início</a>
+                <a href="#sobre" class="text-gray-300 hover:text-white transition duration-300">Sobre</a>
+                <a href="#solucoes" class="text-gray-300 hover:text-white transition duration-300">Soluções</a>
+                <a href="#planos" class="text-gray-300 hover:text-white transition duration-300">Planos</a>
+                <a href="#contato" class="text-gray-300 hover:text-white transition duration-300">Contato</a>
+                <a href="https://wa.me/5584981388144?text=Olá, gostaria de conhecer mais sobre a solução de BI." target="_blank" class="bg-[#004d4d] hover:bg-[#006666] text-white px-6 py-2 rounded-md font-medium text-center transition duration-300">
+                    Solicitar Proposta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-bg min-h-screen flex items-center pt-20 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 slide-up">
+                    Transformamos dados em <span class="text-[#004d4d]">decisões</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 slide-up">
+                    Soluções em Business Intelligence para empresas que querem ir além
+                </p>
+                <div class="flex justify-center space-x-4 slide-up">
+                    <a href="https://wa.me/5584981388144" target="_blank" class="bg-[#004d4d] hover:bg-[#006666] text-white px-8 py-3 rounded-md font-medium transition duration-300">
+                        Fale com a Nivus
+                    </a>
+                    <a href="#solucoes" class="border border-[#004d4d] text-[#004d4d] hover:bg-[#004d4d]/10 px-8 py-3 rounded-md font-medium transition duration-300">
+                        Conheça nossas soluções
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto opacity-70">
+                <div class="bg-[#004d4d]/20 p-4 rounded-lg flex justify-center items-center">
+                    <i data-lucide="bar-chart-2" class="w-8 h-8 text-[#004d4d]"></i>
+                </div>
+                <div class="bg-[#004d4d]/20 p-4 rounded-lg flex justify-center items-center">
+                    <i data-lucide="database" class="w-8 h-8 text-[#004d4d]"></i>
+                </div>
+                <div class="bg-[#004d4d]/20 p-4 rounded-lg flex justify-center items-center">
+                    <i data-lucide="line-chart" class="w-8 h-8 text-[#004d4d]"></i>
+                </div>
+                <div class="bg-[#004d4d]/20 p-4 rounded-lg flex justify-center items-center">
+                    <i data-lucide="pie-chart" class="w-8 h-8 text-[#004d4d]"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-[#1a1a1a]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-16 text-center section-title">
+                Sobre a <span class="text-[#004d4d]">Nivus</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Na Nivus Tecnologia, nossa missão é capacitar empresas a tomar decisões mais inteligentes através da transformação de dados brutos em insights acionáveis.
+                    </p>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Acreditamos que cada empresa, independente do tamanho, merece ter acesso a ferramentas poderosas de Business Intelligence que antes eram exclusivas de grandes corporações.
+                    </p>
+                    <p class="text-gray-300 text-lg">
+                        Combinamos tecnologia de ponta com expertise em análise de dados para entregar soluções personalizadas que impulsionam o crescimento do seu negócio.
+                    </p>
+                </div>
+                
+                <div class="md:w-1/2 bg-[#004d4d]/10 p-8 rounded-xl border border-[#004d4d]/30 slide-up mt-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 rounded-full overflow-hidden mr-6">
+                            <img src="https://i.ibb.co/Jwtqrfhx/imagem-2025-08-01-190225809.png" alt="Tallison Miranda" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Tallison Miranda</h3>
+                            <p class="text-gray-400">Gestão de TI e Processos.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Com experiência em análise de dados e Business Intelligence, Tallison lidera a Nivus Tecnologia com uma visão clara: democratizar o acesso a ferramentas de análise de dados.
+                    </p>
+                    <p class="text-gray-300">
+                        Formado em Gestão de TI e Processos, especializado em implementar soluções de BI personalizadas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="solucoes" class="py-20 bg-[#121212]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-16 text-center section-title">
+                Benefícios do <span class="text-[#004d4d]">Business Intelligence</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-[#1a1a1a] p-8 rounded-xl hover:border-[#004d4d] border border-transparent transition duration-300 fade-in">
+                    <div class="w-14 h-14 bg-[#004d4d]/20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-6 h-6 text-[#004d4d]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Decisões mais rápidas</h3>
+                    <p class="text-gray-400">
+                        Acesso instantâneo a informações críticas para tomar decisões estratégicas com agilidade e precisão.
+                    </p>
+                </div>
+                
+                <div class="bg-[#1a1a1a] p-8 rounded-xl hover:border-[#004d4d] border border-transparent transition duration-300 fade-in">
+                    <div class="w-14 h-14 bg-[#004d4d]/20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-[#004d4d]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Redução de erros</h3>
+                    <p class="text-gray-400">
+                        Minimize erros humanos com relatórios automatizados e dados consistentes e confiáveis.
+                    </p>
+                </div>
+                
+                <div class="bg-[#1a1a1a] p-8 rounded-xl hover:border-[#004d4d] border border-transparent transition duration-300 fade-in">
+                    <div class="w-14 h-14 bg-[#004d4d]/20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="clock" class="w-6 h-6 text-[#004d4d]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Visão em tempo real</h3>
+                    <p class="text-gray-400">
+                        Monitore o desempenho do seu negócio em tempo real com dashboards atualizados automaticamente.
+                    </p>
+                </div>
+                
+                <div class="bg-[#1a1a1a] p-8 rounded-xl hover:border-[#004d4d] border border-transparent transition duration-300 fade-in">
+                    <div class="w-14 h-14 bg-[#004d4d]/20 rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-[#004d4d]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Vantagem competitiva</h3>
+                    <p class="text-gray-400">
+                        Identifique oportunidades e ameaças antes da concorrência com análises preditivas e prescritivas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Presentation -->
+    <section class="py-20 bg-[#1a1a1a]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <h2 class="text-3xl font-bold mb-6 section-title">
+                        Nossa <span class="text-[#004d4d]">Solução</span>
+                    </h2>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Implementamos uma plataforma de Business Intelligence poderosa e intuitiva que permite criar dashboards interativos e relatórios personalizados sem necessidade de conhecimentos técnicos avançados.
+                    </p>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        Nossa solução se integra com diversas fontes de dados, desde planilhas simples até bancos de dados corporativos, proporcionando uma visão unificada de todas as áreas do seu negócio.
+                    </p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#004d4d] mr-2"></i>
+                            Visualização de dados intuitiva e personalizável
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#004d4d] mr-2"></i>
+                            Acesso seguro de qualquer dispositivo
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#004d4d] mr-2"></i>
+                            Compartilhamento seguro de relatórios
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/2 slide-up">
+                    <div class="dashboard-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Dashboard de Business Intelligence" 
+                             class="w-full rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="planos" class="py-20 bg-[#121212]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-16 text-center section-title">
+                Nossos <span class="text-[#004d4d]">Planos</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto bg-[#1a1a1a] rounded-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#333]">
+                    <div class="p-8 fade-in">
+                        <h3 class="text-xl font-bold text-white mb-2">Implantação</h3>
+                        <p class="text-gray-400 mb-6">Configuração inicial e integração</p>
+                        <div class="text-4xl font-bold text-white mb-6">R$ 500</div>
+                        <ul class="space-y-3 text-gray-300 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Configuração inicial
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Conexão com fontes de dados
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Dashboard básico
+                            </li>
+                        </ul>
+                        <a href="#contato" class="block w-full text-center bg-[#004d4d] hover:bg-[#006666] text-white px-6 py-3 rounded-md font-medium transition duration-300 mb-8">
+                            Contratar
+                        </a>
+                    </div>
+                    
+                    <div class="p-8 fade-in">
+                        <h3 class="text-xl font-bold text-white mb-2">Ferramenta</h3>
+                        <p class="text-gray-400 mb-6">Licença mensal da plataforma</p>
+                        <div class="text-4xl font-bold text-white mb-6">R$ 199<span class="text-lg text-gray-400">/mês</span></div>
+                        <ul class="space-y-3 text-gray-300 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Acesso à plataforma
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Atualizações automáticas
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                5 usuários incluídos
+                            </li>
+                        </ul>
+                        <a href="#contato" class="block w-full text-center bg-[#004d4d] hover:bg-[#006666] text-white px-6 py-3 rounded-md font-medium transition duration-300 mb-8">
+                            Contratar
+                        </a>
+                    </div>
+                    
+                    <div class="p-8 fade-in">
+                        <h3 class="text-xl font-bold text-white mb-2">Suporte</h3>
+                        <p class="text-gray-400 mb-6">Assistência especializada</p>
+                        <div class="text-4xl font-bold text-white mb-6">R$ 299<span class="text-lg text-gray-400">/mês</span></div>
+                        <ul class="space-y-3 text-gray-300 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Suporte prioritário
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-4 h-4 text-[#004d4d] mr-2"></i>
+                                Atualização de dashboards
+                            </li>
+                        </ul>
+                        <a href="#contato" class="block w-full text-center bg-[#004d4d] hover:bg-[#006666] text-white px-6 py-3 rounded-md font-medium transition duration-300 mb-8">
+                            Contratar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center text-gray-400">
+                <p>Precisa de um plano personalizado? <a href="#contato" class="text-[#004d4d] hover:underline">Fale conosco</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-[#1a1a1a]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-16 text-center section-title">
+                Entre em <span class="text-[#004d4d]">Contato</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <h3 class="text-xl font-bold text-white mb-6">Solicite uma proposta ou tire suas dúvidas</h3>
+                    <p class="text-gray-300 mb-8">
+                        Entre em contato conosco através dos canais abaixo para solicitar uma proposta ou tirar suas dúvidas. Nossa equipe está pronta para ajudá-lo.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-[#004d4d]/20 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="mail" class="w-5 h-5 text-[#004d4d]"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">E-mail</p>
+                                <p class="text-white">tallisongtr@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-[#004d4d]/20 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="phone" class="w-5 h-5 text-[#004d4d]"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Telefone</p>
+                                <p class="text-white">(84) 98138-8144</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-[#004d4d]/20 rounded-full flex items-center justify-center mr-4">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-[#004d4d]"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Endereço</p>
+                                <p class="text-white">Natal - RN, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 slide-up">
+                    <div class="bg-[#121212] p-8 rounded-xl">
+                        <!-- Contact form could be added here in the future -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#121212] py-12 border-t border-[#333]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">
+                        <span class="text-[#004d4d]">Nivus</span> Tecnologia
+                    </a>
+                    <p class="text-gray-400 mt-2">Transformando dados em decisões estratégicas</p>
+                </div>
+                
+                
+                <div class="text-gray-400 text-sm">
+                    <p>&copy; 2025 Nivus Tecnologia. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-up');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.fade-in, .slide-up').forEach(element => {
+            element.style.opacity = '0';
+        });
+        
+        // Run once on page load
+        animateOnScroll();
+        
+        // Then run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
